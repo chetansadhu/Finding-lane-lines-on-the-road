@@ -1,7 +1,12 @@
 # Project: Finding lane lines on the road
 
+## Table of contents
+1. [Overview](#Overview)
+2. [Pipeline of the lane detection](#Pipeline-of-the-lane-detection)
+3. [Detailed description of the pipeline](#Detailed-description-of-the-pipeline)
+4. [Shortcomings of the approach](#Shortcomings-of-the-approach)
 
-Overview
+Overview <a name="Overview"> </a>
 ---
 The aim of this project is to find the lane lines on the road for a self driving car.
 
@@ -62,7 +67,7 @@ From the hough lines there will be more than one line segment for each left and 
 From the points obtained in the previous step, 2 lines are drawn using `draw_lines` function. The resulting line image and the original image is fed into `weighted_img` function to obtain the final output image
 
 
-Shortcomings of the approach
+Shortcomings of the approach <a name="Shortcomings-of-the-approach"> </a>
 ---
 * Illumination changes - The parameter values are fine tuned for the images and videos that provided in the test set. It will not work in most cases such as a bright sunny day and the sunlight is directly coming onto the camera, night time where there are street lights and no street lights.
 * Different weather conditions such as rainy and snow. In this situation camera cannot see the lane markings, so this pipeline may not work.
