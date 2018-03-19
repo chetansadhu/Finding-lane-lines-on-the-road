@@ -58,6 +58,8 @@ In this step Region of Interest is selected in a trapezoidal form with `vertices
 In this step, lines are detected using hough line detection alogorithm. The helper function is modified to return both line segments and the line image. Parameters used for the detection are: `rho = 1`, `theta = pi /180`, `threshold = 10`, `min_line_len = 15` and `max_line_gap = 5`.
 
 #### Step7: Identify left and right lines
+<img src="test_images_output/new_line.jpg" width="480"/>
+
 In this step left and right lines are identified separately. Lines are identified based on the slope values. Line is identified as right line if the value of the slope lies between `sin(30)` and `sin(60)` and as left line if the value of the slope lies between `cos(120)` and `cos(150)`. The angle values 30, 60, 120 and 150 are selected because the line orientation from the camera view angle will be in this range. This assumes there will not be any horizontal and vertical line markings.
 
 After identifying the left and right line, a new pair of x and y coordinate is found for each line to draw a line segment. To do this `2-point form` of the straight line is used. 
